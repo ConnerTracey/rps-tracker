@@ -17,6 +17,6 @@ PlayerA = 0
 PlayerB = 0
 Ties = 0
 Rounds = 0
-OLED.writeStringNewLine("Play Rock Paper      Scissors?                                 How to Play:         Press A/B to add score to Player A/B. Press A+B to count Tie. Shake to reset.")
-basic.pause(2000)
+OLED.writeStringNewLine("Play Rock Paper      Scissors?                                 How to Play:         Press A/B to add     score to Player A/B. Press A+B to count a tie. Shake to reset.")
+basic.pause(5000)
 UpdateScore()
