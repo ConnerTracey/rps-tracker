@@ -37,6 +37,49 @@ input.onButtonPressed(Button.B, function () {
 input.onGesture(Gesture.Shake, function () {
     reset()
 })
+input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.pause(500)
+    if (PlayerA < PlayerB) {
+        OLED.clear()
+        basic.clearScreen()
+        OLED.writeStringNewLine("The Winner is...     Player B!")
+        basic.showLeds(`
+            . # # . .
+            . # . # .
+            . # # . .
+            . # . # .
+            . # # . .
+            `)
+        basic.pause(3000)
+        reset()
+    } else if (PlayerB < PlayerA) {
+        OLED.clear()
+        basic.clearScreen()
+        OLED.writeStringNewLine("The Winner is...     Player A!")
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            . # # # .
+            # . . . #
+            # . . . #
+            `)
+        basic.pause(3000)
+        reset()
+    } else {
+        OLED.clear()
+        basic.clearScreen()
+        OLED.writeStringNewLine("Tie Game")
+        basic.showLeds(`
+            # # # # #
+            . . # . .
+            . . # . .
+            . . # . .
+            . . # . .
+            `)
+        basic.pause(3000)
+        reset()
+    }
+})
 function reset () {
     OLED.init(128, 64)
     PlayerA = 0
